@@ -192,19 +192,19 @@ const App: React.FC = () => {
           <div className="flex items-center gap-2">
             <button
               onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-              className={`p-2 rounded-full transition-colors ${themeClasses.buttonInactive}`}
+              className={`p-2 rounded-full transition-colors cursor-pointer ${themeClasses.buttonInactive}`}
             >
               {theme === "dark" ? <Sun size={18} /> : <Moon size={18} />}
             </button>
             <button
               onClick={() => setShowSettings(!showSettings)}
-              className={`p-2 rounded-full transition-colors ${themeClasses.buttonInactive}`}
+              className={`p-2 rounded-full transition-colors cursor-pointer ${themeClasses.buttonInactive}`}
             >
               <SettingsIcon size={18} />
             </button>
             <button
               onClick={requestNotificationPermission}
-              className={`p-2 rounded-full transition-colors ${
+              className={`p-2 rounded-full transition-colors cursor-pointer ${
                 notificationsEnabled
                   ? "bg-indigo-500/20 text-indigo-500"
                   : themeClasses.buttonInactive
@@ -277,7 +277,7 @@ const App: React.FC = () => {
               setPomodoroTime(settings.focus * 60);
               setIsPomodoroActive(false);
             }}
-            className={`flex-1 py-2 rounded-lg text-sm font-medium transition-all ${
+            className={`flex-1 py-2 rounded-lg text-sm font-medium transition-all cursor-pointer ${
               mode === "focus"
                 ? "bg-indigo-600 text-white shadow-lg"
                 : themeClasses.textMuted
@@ -291,7 +291,7 @@ const App: React.FC = () => {
               setPomodoroTime(settings.break * 60);
               setIsPomodoroActive(false);
             }}
-            className={`flex-1 py-2 rounded-lg text-sm font-medium transition-all ${
+            className={`flex-1 py-2 rounded-lg text-sm font-medium transition-all cursor-pointer ${
               mode === "break"
                 ? "bg-emerald-600 text-white shadow-lg"
                 : themeClasses.textMuted
@@ -342,7 +342,7 @@ const App: React.FC = () => {
         <div className="flex justify-center gap-4 mb-10">
           <button
             onClick={() => setIsPomodoroActive(!isPomodoroActive)}
-            className={`w-16 h-16 rounded-2xl flex items-center justify-center transition-transform active:scale-95 shadow-lg ${
+            className={`w-16 h-16 rounded-2xl flex items-center justify-center transition-transform active:scale-95 shadow-lg cursor-pointer ${
               isPomodoroActive
                 ? "bg-amber-500 text-white"
                 : "bg-indigo-600 text-white"
@@ -356,7 +356,7 @@ const App: React.FC = () => {
           </button>
           <button
             onClick={resetPomodoro}
-            className={`w-16 h-16 rounded-2xl flex items-center justify-center transition-colors ${themeClasses.buttonInactive} hover:opacity-80`}
+            className={`w-16 h-16 rounded-2xl flex items-center justify-center transition-colors  cursor-pointer ${themeClasses.buttonInactive} hover:opacity-80`}
           >
             <RotateCcw size={24} />
           </button>
